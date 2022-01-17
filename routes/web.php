@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\TestJob;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    TestJob::dispatch('Hello Job');
     return view('welcome');
 });
